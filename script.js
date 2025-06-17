@@ -1,4 +1,4 @@
-(function (){
+(function () {
     var preTag = document.getElementById('donut')
 
     var A = 1;
@@ -19,22 +19,22 @@
         B += 0.03;
 
         cA = Math.cos(A),
-        sA = Math.sin(A),
-        cB = Math.cos(B),
-        sB = Math.sin(B);
+            sA = Math.sin(A),
+            cB = Math.cos(B),
+            sB = Math.sin(B);
 
-        for(k = 0; k < width * height; k++) {
+        for (k = 0; k < width * height; k++) {
             b[k] = k % width == width - 1 ? '\n' : ' ';
             z[k] = 0;
         }
 
-        for(var j = 0; j < 6.28; j+=0.07){
+        for (var j = 0; j < 6.28; j += 0.07) {
             var ct = Math.cos(j);
             var st = Math.sin(j);
-            
-            for(var i = 0; i < 6.28; i += 0.02){
+
+            for (var i = 0; i < 6.28; i += 0.02) {
                 var sp = Math.sin(i);
-                    cp = Math.cos(i),
+                cp = Math.cos(i),
                     h = ct + 2,
                     D = 1 / (sp * h * sA + st * cA + 5),
                     t = sp * h * cA - st * sA;
@@ -62,9 +62,9 @@
 
     renderAsciiFrame();
 
-    if(document.all){
+    if (document.all) {
         window.attachEvent('onload', startAsciiAnimation);
-    }else{
+    } else {
         window.addEventListener('load', startAsciiAnimation, false);
     }
 
